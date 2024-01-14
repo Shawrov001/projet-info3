@@ -14,15 +14,48 @@ function afficher_aide {
     exit 1
 }
 
+
+
+
+
+# Fonction pour gérer l'option -h
+function gestion_option_h {
+    while [ "$#" -gt 0 ]; do
+        case "$1" in
+            -h)
+                afficher_aide
+                exit 0
+                ;;
+            *)
+                shift
+                ;;
+        esac
+    done
+}
+
+
+gestion_option_h "$@"
+
+
+
+
+
 # Vérifier le nombre d'arguments
 if [ "$#" -lt 2 ]; then
     echo "Erreur: Vous devez fournir au moins deux arguments."
     afficher_aide
 fi
 
+
 # Vérifier si l'option d'aide est spécifiée
 if [ "$1" == "-h" ]; then
-    afficher_aide
+    echo " comment puis je vous aider ?"
+    echo " revenir au menue "
+    echo " detaille des description D1 :  "
+    echo " detaille des description D2 : "
+    echo " detaille des description L  : "
+    echo " detaille des description T  : "
+    echo " detaille des description S  :  "
 fi
 
 # Chemin du fichier de données
@@ -39,25 +72,40 @@ function traitementD1 {
  echo "Traitement D1 en cours.."
     start_time=$(date +%s.%N)
     awk -F';' '{conducteurs[$1]++; if (!distance[$1]) { count[$6]++; distance[$1]=1 }} END {for (i in count) print count[i]";"i}' "$chemin_du_fichier" | sort -k1nr | head -n 10 > temp1.txt
-duration=$(echo "$end_time - $start_time" | bc)
-    echo "Durée du traitement S: $duration secondes"
+    end_time=$(date +%s.%N)
+    duration=$(echo "$end_time - $start_time" | bc)
+
+    echo "Durée du traitement D1: $duration secondes"
+
 }
 
 function traitementD2 {
  echo "Traitement D2 en cours.."
     start_time=$(date +%s.%N)
     awk -F';' '{total[$6]+=$5} END {for (i in total) printf "%.3f;%s\n", total[i], i}' "$chemin_du_fichier" | sort -t';' -k1nr | head -n 10 > temp2.txt
-duration=$(echo "$end_time - $start_time" | bc)
-    echo "Durée du traitement S: $duration secondes"
+    end_time=$(date +%s.%N)
+    duration=$(echo "$end_time - $start_time" | bc)
+
+    echo "Durée du traitement D2: $duration secondes"
 }
 
 function traitementL {
- echo "Traitement T en cours.."
+    echo "Traitement L en cours.."
     start_time=$(date +%s.%N)
-    awk -F';' '{total[$1]+=$5} END {for (i in total) print total[i], i}' "$chemin_du_fichier" | sort -t';' -k1nr | head -n 10 > temp3.txt
-duration=$(echo "$end_time - $start_time" | bc)
-    echo "Durée du traitement S: $duration secondes"
+
+    awk -F';' '{total[$1]+=$5} END {for (i in total) printf "%.3f %s\n", total[i], i}' "$chemin_du_fichier" | sort -t';' -k1nr -k2n | head -n 10 > temp.txt
+
+    end_time=$(date +%s.%N)
+    duration=$(echo "$end_time - $start_time" | bc)
+
+    echo "Durée du traitement L: $duration secondes"
 }
+
+
+ 
+
+
+
 
 function traitementT {
     echo "Traitement T en cours.."
@@ -74,18 +122,6 @@ function traitementT {
             printf "%s;%d;%d\n", i, (i in townAStep1) ? townAStep1[i] : 0, total[i] + totaal[i];
         }
     }' "$chemin_du_fichier" > temp.txt
-
-    # Compile le programme C
-    gcc -o exe traitementT.c
-
-    # Vérifie si la compilation a réussi
-    if [ $? -eq 0 ]; then
-        # Lance le programme C
-        ./exe
-    else
-        echo "Erreur de compilation du programme C."
-    fi
-
     end_time=$(date +%s.%N)
     duration=$(echo "$end_time - $start_time" | bc)
     echo "Durée du traitement T: $duration secondes"
@@ -115,18 +151,6 @@ function traitementS {
             print r ";" smallest[r] ";" (sum[r]/count[r]) ";" largest[r] ";" (largest[r] - smallest[r]);
         }
     }' "$chemin_du_fichier" | awk '{gsub(/,/, "."); print}' > temp.txt
-
-    # Compile le programme C
-    gcc -o exe traitementS.c
-
-    # Vérifie si la compilation a réussi
-    if [ $? -eq 0 ]; then
-        # Lance le programme C
-        ./exe
-    else
-        echo "Erreur de compilation du programme C."
-    fi
-
     end_time=$(date +%s.%N)
     duration=$(echo "$end_time - $start_time" | bc)
     echo "Durée du traitement S: $duration secondes"
@@ -136,23 +160,22 @@ function traitementS {
 shift  # Pour ignorer le premier argument qui est le chemin du fichier
 while [ "$#" -gt 0 ]; do
     case "$1" in
-        traitementD1)
+        -D1)
             traitementD1
             ;;
-        traitementD2)
+        -D2)
             traitementD2
             ;;
-        traitementL)
+        -L)
             traitementL
             ;;
-        traitementT)
+        -T)
             traitementT
             ;;
-        traitementS)
+        -S)
             traitementS
             ;;
         *) echo "Traitement inconnu: $1" ; afficher_aide;;
     esac
     shift
 done
-
