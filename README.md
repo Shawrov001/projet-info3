@@ -106,7 +106,7 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
 Utilisation: ./tous9.sh clean
 ```
 Cette commande permet de tout nettoyer derrière vous tel un ninja, elle permet d'effacer tous les fichiers et dossiers non nécessaire. 
-Exemple d'usage:
+Exemple d'usage:  
 Admettons que vous voulez utilsez le script faire x et y graphique, une fois terminé et importé vos graphiques dans votre clé usb, au lieu de supprimer manuellement tous les fichiers générés, vous avez juste à lancer cette commande et tout s'effecera derrière vous. Une autre personne pourra juste après utiliser le programme sans qu'il ne sache que que vous avez fait juste avant.
 
 ### Fonctionement de la commaned clean.
