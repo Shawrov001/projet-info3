@@ -101,13 +101,20 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
     exit 0
 ```
 ## Bonus
- ###La commande clean
+ ### La commande clean
   ```sh
 Utilisation: ./tous9.sh clean
 ```
 Cette commande permet de tout nettoyer derrière vous tel un ninja, elle permet d'effacer tous les fichiers et dossiers non nécessaire. 
 Exemple d'usage:  
 Admettons que vous voulez utilsez le script faire x et y graphique, une fois terminé et importé vos graphiques dans votre clé usb, au lieu de supprimer manuellement tous les fichiers générés, vous avez juste à lancer cette commande et tout s'effecera derrière vous. Une autre personne pourra juste après utiliser le programme sans qu'il ne sache que que vous avez fait juste avant.
+
+### la commande sans argument
+```sh
+utilisation ./script.sh
+```
+Si dans le fichier vous avez un fichier data.csv dans le même dossier, le programme va créer un dossier data et va le ranger de sorte à ce que le programme soit utilisable avec le reste du programme, et va afficher l'aide.  
+Autrement, la commande va juste afficher l'aide.
 
 ## Fonctionement de la commaned clean.
 ``` sh
