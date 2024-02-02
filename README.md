@@ -116,10 +116,6 @@ utilisation ./script.sh
 Si dans le fichier vous avez un fichier data.csv dans le même dossier, le programme va créer un dossier data et va le ranger de sorte à ce que le programme soit utilisable avec le reste du programme, et va afficher l'aide.  
 Autrement, la commande va juste afficher l'aide.
 
-## Fonctionement de la commaned clean.
-``` sh
-./script.sh clean
-```
 
 ### Licence : John shenouda , Sharow DAS , ALexandre
 
