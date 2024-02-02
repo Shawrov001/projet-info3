@@ -116,6 +116,12 @@ utilisation ./script.sh
 Si dans le fichier vous avez un fichier data.csv dans le même dossier, le programme va créer un dossier data et va le ranger de sorte à ce que le programme soit utilisable avec le reste du programme, et va afficher l'aide.  
 Autrement, la commande va juste afficher l'aide.
 
+### la commande help
+```sh
+utilisation ./script.sh -h
+```
+La commange help fonctionne sans qu'on ait besoin de mettre la localisation du data.csv en premier argument
+
 
 ### Licence : John shenouda , Sharow DAS , ALexandre
 
