@@ -64,7 +64,6 @@ Pour utiliser ce script, naviguez dans le répertoire contenant le script et ex�
 ### Exemples d'Utilisation
 
 Pour exécuter le traitement D1 et lister les 10 conducteurs ayant effectué le plus de trajets :
-
 ```
 ./nom_du_script.sh data/data.csv -D1
 ```
@@ -103,5 +102,15 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
 ```
 ### info en plus.
  A la fin du script , il va vous demander si vous vouler supprimer les dossier suivant : temp , images , demo ,
-  Si le fichier data.csv il n'est pas dans le dossier data , le script va vous le deplacer , mais aussi si les dossier suivant ne sont pas cree , le script va vous le cree lui meme.
+  Si le fichier data.csv il n'est pas dans le dossier data , le script va vous le deplacer. mais aussi si les dossier suivant ne sont pas cree , le script va vous le cree lui meme.
   n'effacer surtout pas dans le dossier progc car , il contient les codes en C et le Makefile , vous pouvez effacer les dossier data , temp , images  , demo  car le shell va le cree si il detecte que il ne sont pas disponible
+  Il est oblige que le data.csv soit en premiere argument , sans ca le code ne marchera pas , car il va vous afficher le message suivant :
+  ```sh
+Erreur : Vous devez fournir 'data/data.csv' comme premier argument.
+Utilisation: ./tous9.sh data/data.csv [OPTIONS]
+```
+
+
+
+###Licence : John shenouda , Sharow DAS , ALexandre
+
