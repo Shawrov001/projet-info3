@@ -122,6 +122,10 @@ utilisation ./script.sh -h
 ```
 La commange help fonctionne sans qu'on ait besoin de mettre la localisation du data.csv en premier argument
 
-
+### la commande -a
+```sh
+utilisation ./script data/data.csv -a
+```
+lance tous les traitements
 ### Licence : John shenouda , Sharow DAS , ALexandre
 
