@@ -100,14 +100,14 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
     echo "Exemple : ./script.sh -D1 -D2 -L"
     exit 0
 ```
-### info en plus.
- A la fin du script , il va vous demander si vous vouler supprimer les dossier suivant : temp , images , demo ,
-  Si le fichier data.csv il n'est pas dans le dossier data , le script va vous le deplacer. mais aussi si les dossier suivant ne sont pas cree , le script va vous le cree lui meme.
-  n'effacer surtout pas dans le dossier progc car , il contient les codes en C et le Makefile , vous pouvez effacer les dossier data , temp , images  , demo  car le shell va le cree si il detecte que il ne sont pas disponible
-  Il est oblige que le data.csv soit en premiere argument , sans ca le code ne marchera pas , car il va vous afficher le message suivant :
+### Bonus
+ La commande clean
   ```sh
-Erreur : Vous devez fournir 'data/data.csv' comme premier argument.
-Utilisation: ./tous9.sh data/data.csv [OPTIONS]
+Utilisation: ./tous9.sh clean
+```
+Cette commande permet de tout nettoyer derrière vous tel un ninja, elle permet d'effacer tous les fichiers et dossiers non nécessaire. 
+Exemple d'usage:
+Admettons que vous voulez utilsez le script faire x et y graphique, une fois terminé et importé vos graphiques dans votre clé usb, au lieu de supprimer manuellement tous les fichiers générés, vous avez juste à lancer cette commande et tout s'effecera derrière vous. Une autre personne pourra juste après utiliser le programme sans qu'il ne sache que que vous avez fait juste avant.
 
 ### Fonctionement de la commaned clean.
 ``` sh
