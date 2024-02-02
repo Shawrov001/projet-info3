@@ -75,7 +75,7 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
 ```
 ## la fonction HELP(-h)
 ```sh
-  echo "Utilisation: ./tous9.sh [OPTIONS]"
+  echo "Utilisation: ./script.sh [OPTIONS]"
     echo ""
     echo "Ce script permet de manipuler et d'analyser des données à partir d'un fichier CSV."
     echo ""
@@ -103,7 +103,7 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
 ## Bonus
  ### La commande clean
   ```sh
-Utilisation: ./tous9.sh clean
+Utilisation: ./script.sh clean
 ```
 Cette commande permet de tout nettoyer derrière vous tel un ninja, elle permet d'effacer tous les fichiers et dossiers non nécessaire. 
 Exemple d'usage:  
