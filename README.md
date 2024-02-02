@@ -44,6 +44,8 @@ Le script suit une structure logique pour faciliter la manipulation et l'analyse
 
 Pour utiliser ce script, naviguez dans le répertoire contenant le script et exécutez-le avec le chemin du fichier CSV en argument, suivi des options de traitement souhaitées.
 
+
+
 ### Syntaxe
 
 ```
@@ -99,3 +101,7 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
     echo "Exemple : ./script.sh -D1 -D2 -L"
     exit 0
 ```
+### info en plus.
+ A la fin du script , il va vous demander si vous vouler supprimer les dossier suivant : temp , images , demo ,
+  Si le fichier data.csv il n'est pas dans le dossier data , le script va vous le deplacer , mais aussi si les dossier suivant ne sont pas cree , le script va vous le cree lui meme.
+  n'effacer surtout pas dans le dossier progc car , il contient les codes en C et le Makefile , vous pouvez effacer les dossier data , temp , images  , demo  car le shell va le cree si il detecte que il ne sont pas disponible
