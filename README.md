@@ -109,8 +109,10 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
 Erreur : Vous devez fournir 'data/data.csv' comme premier argument.
 Utilisation: ./tous9.sh data/data.csv [OPTIONS]
 ```
-
-
+###Fonctionement de la commaned clean.
+``` sh
+script.sh clean
+```
 
 ###Licence : John shenouda , Sharow DAS , ALexandre
 
