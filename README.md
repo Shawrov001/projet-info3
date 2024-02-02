@@ -46,13 +46,13 @@ Pour utiliser ce script, naviguez dans le répertoire contenant le script et ex�
 
 
 
-### Syntaxe
+## Syntaxe
 
 ```
 ./nom_du_script.sh data/data.csv [OPTIONS]
 ```
 
-### Options
+## Options
 
 - `-D1` : Affiche les 10 conducteurs ayant effectué le plus de trajets.
 - `-D2` : Liste les 10 conducteurs ayant parcouru la plus grande distance.
@@ -61,7 +61,7 @@ Pour utiliser ce script, naviguez dans le répertoire contenant le script et ex�
 - `-S` : Fournit des statistiques sur les étapes des trajets.
 - `-h` : Affiche le message d'aide et quitte le script.
 
-### Exemples d'Utilisation
+## Exemples d'Utilisation
 
 Pour exécuter le traitement D1 et lister les 10 conducteurs ayant effectué le plus de trajets :
 ```
@@ -73,7 +73,7 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
 ```
 ./nom_du_script.sh data/data.csv -D1 -D2 -L
 ```
-### la fonction HELP(-h)
+## la fonction HELP(-h)
 ```sh
   echo "Utilisation: ./tous9.sh [OPTIONS]"
     echo ""
@@ -100,8 +100,8 @@ Pour combiner plusieurs options et exécuter plusieurs traitements en une seule 
     echo "Exemple : ./script.sh -D1 -D2 -L"
     exit 0
 ```
-### Bonus
- La commande clean
+## Bonus
+ ###La commande clean
   ```sh
 Utilisation: ./tous9.sh clean
 ```
@@ -109,7 +109,7 @@ Cette commande permet de tout nettoyer derrière vous tel un ninja, elle permet 
 Exemple d'usage:  
 Admettons que vous voulez utilsez le script faire x et y graphique, une fois terminé et importé vos graphiques dans votre clé usb, au lieu de supprimer manuellement tous les fichiers générés, vous avez juste à lancer cette commande et tout s'effecera derrière vous. Une autre personne pourra juste après utiliser le programme sans qu'il ne sache que que vous avez fait juste avant.
 
-### Fonctionement de la commaned clean.
+## Fonctionement de la commaned clean.
 ``` sh
 ./script.sh clean
 ```
