@@ -39,10 +39,11 @@ Le script suit une structure logique pour faciliter la manipulation et l'analyse
 4. **Vérification et préparation des données** : Vérifie l'existence du fichier `data.csv` et le déplace si nécessaire.
 5. **Traitement des données** : Offre plusieurs options pour traiter les données, telles que l'affichage des conducteurs ayant effectué le plus de trajets, la liste des villes les plus traversées, etc.
 6. **Affichage de l'aide** : Fournit des informations sur l'utilisation du script et les options disponibles.
+7. **Programme C** : les fichiers nécessaires pour le fonctionnement du programme C sont placés dans le dossier progc
 
 ## Utilisation
 
-Pour utiliser ce script, naviguez dans le répertoire contenant le script et exécutez-le avec le chemin du fichier CSV en argument, suivi des options de traitement souhaitées.
+Pour utiliser ce script, vous devez créer un dossier nommé "data" et ajouter votre data.csv dans le dossier data. Puis naviguez dans le répertoire contenant le script et exécutez-le avec le chemin du fichier CSV en argument, suivi des options de traitement souhaitées.
 
 
 
@@ -113,8 +114,9 @@ Admettons que vous voulez utilsez le script faire x et y graphique, une fois ter
 ```sh
 utilisation ./script.sh
 ```
-Si dans le fichier vous avez un fichier data.csv dans le même dossier, le programme va créer un dossier data et va le ranger de sorte à ce que le programme soit utilisable avec le reste du programme, et va afficher l'aide.  
-Autrement, la commande va juste afficher l'aide.
+Si vous avez un fichier data.csv dans le même dossier, le programme va créer un dossier data et va le ranger de sorte à ce que le programme soit utilisable avec le reste du programme, et va afficher l'aide.  
+Autrement, la commande va juste afficher l'aide.  
+Vous pouvez dont lancer cette commande la première fois que vous que vous téléchargez le script après avoir mis votre data.csv dans le même répertoire que le script.
 
 ### la commande help
 ```sh
